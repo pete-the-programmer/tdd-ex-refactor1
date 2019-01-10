@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace src{
     public class Ferry: Vehicle {
-        private List<Destination> _portsVisited = new List<Destination>();
+        private int _portCount = 0;
 
         public bool GoTo(Destination destination){
             if((new[] {
@@ -12,7 +12,7 @@ namespace src{
                 Destination.QuailIsland})
                 .Contains(destination)){
 
-                _portsVisited.Add(destination);
+                _portsVisited++;
                 return true;
             }
             return false;
@@ -20,7 +20,7 @@ namespace src{
 
         public int PortsVisitedCount{
             get{
-                return _portsVisited.Count();
+                return _portCount;
             }
         }
     }
